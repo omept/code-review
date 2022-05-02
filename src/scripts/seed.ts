@@ -18,9 +18,9 @@ import { DBURL } from "../config";
     divisa: `String`,
     prefered_cryptocurrency: `String`
   });
-  await profile.save();
+  const seedProfile = await profile.save();
 
-  const query = { _id: "6093abb3dfd9da1deeae56f2" };
+  const query = { _id: seedProfile.id };
   const idProfile = await Profile.findOne(query).then((e) => {
     return e?._id;
   });
