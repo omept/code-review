@@ -9,10 +9,10 @@ const schema = new Schema(
     cryptocurrency: String,
     euros: Number,
     price: Number,
-    quantity: Number,
+    quantity: Number
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 

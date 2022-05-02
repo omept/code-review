@@ -8,10 +8,10 @@ const schema = new Schema(
     name: String,
     favorite1: String,
     favorite2: String,
-    favorite3: String,
+    favorite3: String
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 

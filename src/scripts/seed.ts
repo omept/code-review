@@ -1,15 +1,14 @@
+/* eslint-disable quotes */
 import mongoose from "mongoose";
-import _ from "lodash";
 import { Profile } from "../models/Profile";
 import { Simulator } from "../models/Simulator";
 import { Favorite } from "../models/Favorite";
 import { DBURL } from "../config";
 
 (async () => {
-
   mongoose.connect(DBURL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   });
 
   const profile = new Profile({
@@ -17,7 +16,7 @@ import { DBURL } from "../config";
     email: `String`,
     capital: `123`,
     divisa: `String`,
-    prefered_cryptocurrency: `String`,
+    prefered_cryptocurrency: `String`
   });
   await profile.save();
 
@@ -34,7 +33,7 @@ import { DBURL } from "../config";
     cryptocurrency: `String`,
     divisa: `String`,
     Crypto_price_start: `123`,
-    Crypto_price_check: `123`,
+    Crypto_price_check: `123`
   });
   await simulator.save();
 
@@ -43,7 +42,7 @@ import { DBURL } from "../config";
     name: `String`,
     favorite1: `String`,
     favorite2: `String`,
-    favorite3: `String`,
+    favorite3: `String`
   });
   await favorite.save();
 

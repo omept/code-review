@@ -15,4 +15,4 @@ const checkEnv = (envVar: string, defaultValue?: string) => {
 export const PORT: number = parseInt(checkEnv("PORT"), 10);
 export const DBURL: string = checkEnv("DBURL");
 export const APP_URL: string = checkEnv("APP_URL");
-export const CORS_ORIGINS = ["http://localhost:3000"];
+export const CORS_ORIGINS = [`${APP_URL}:${PORT}`];

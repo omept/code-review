@@ -8,7 +8,7 @@ const schema = new Schema({
   email: String,
   capital: Number,
   divisa: String,
-  prefered_cryptocurrency: String,
+  prefered_cryptocurrency: String
 });
 
 export const Profile = mongoose.model("Profile", schema);

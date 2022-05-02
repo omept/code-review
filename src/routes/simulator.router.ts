@@ -1,15 +1,10 @@
-import express from "express";
 import { Router } from "express";
 import { Simulator } from "../models/Simulator";
-import cors from "cors";
 
-var app = express();
-app.use(cors());
-
-export var router = express.Router();
+export const router = Router();
 
 router.get("/api/simulator", async (req, res) => {
-  var simulator = await Simulator.find().lean();
+  const simulator = await Simulator.find().lean();
   console.log(simulator);
   res.json({ simulator });
 });
@@ -17,20 +12,25 @@ router.get("/api/simulator", async (req, res) => {
 router.get("/api/simulator/:profile_id", async (req, res) => {
   console.log("========== ");
   let query = {};
-  var { profile_id } = req.params;
+  // eslint-disable-next-line camelcase
+  const { profile_id } = req.params;
+  // eslint-disable-next-line camelcase
   console.log({ profile_id });
+  // eslint-disable-next-line camelcase
   query = { profile_id };
-  var data = await Simulator.find(query);
+  const data = await Simulator.find(query).lean();
   res.json(data);
 });
 
 router.post("/api/simulator/:profile_id", async (req, res) => {
-  var { profile_id } = req.params;
-  var newData = {
+  // eslint-disable-next-line camelcase
+  const { profile_id } = req.params;
+  const newData = {
     ...req.body,
-    profile_id,
+    // eslint-disable-next-line camelcase
+    profile_id
   };
   console.log(newData);
-  var simulator = await Simulator.create(newData);
+  const simulator = await Simulator.create(newData);
   res.json(simulator);
 });
