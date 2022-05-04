@@ -6,7 +6,7 @@ import { DEFAULT_PAYLOAD_LIMIT } from "../config";
 class ProfileController {
   public async getProfiles (req: Request, res: Response) {
     const profile = await Profile.find().limit(DEFAULT_PAYLOAD_LIMIT).lean();
-    Log.info(profile);
+    Log.info({ profile, description: "getProfiles response" });
     res.json({ profile });
   }
 

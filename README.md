@@ -1,21 +1,16 @@
 # Backend code review
 
-Hi! I took two approaches for solving the code review accessment
-
-1) Coding
-2) Non Coding
-
 <br />
 
-# Non Coding
+# Story
 
-    Adding some comments to model files will help its readability. Severity of this is very low so I ignored making this change.
+```Adding some comments to model files will help its readability. Severity of this is very low so I ignored making this change.```
 
 <br />
 
 # Coding
 
-    I used git to track my progress and my git commit logs are listed below. You can view the repo [here](https://github.com/ong-gtp/code-review)
+```I used git to track my progress and my git commit logs are listed below. You can view the repo online at https://github.com/ong-gtp/code-review ```
 
  ### c3e9fbd5  (git commit ID)
 -----------------------------------------

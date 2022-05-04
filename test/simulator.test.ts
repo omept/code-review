@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
 import request from "supertest";
-import { server } from "../../api";
-import { Simulator } from "../../models/Simulator";
+import { server } from "../src/api";
+import { Simulator } from "../src/models/Simulator";
 
 describe("test simulator routes", () => {
-  // beforeEach(() => {
-  //   jest.mock("../../models/Simulator.ts");
-  // });
+  beforeEach(() => {
+    jest.mock("../src/models/Simulator.ts");
+  });
   const profileId = "62728110a940ff133370b033";
   const profileId2 = "41224d776a326fb40f000001";
   const simulators = {

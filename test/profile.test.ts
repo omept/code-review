@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
 import request from "supertest";
-import { server } from "../../api";
-import { Profile } from "../../models/Profile";
+import { server } from "../src/api";
+import { Profile } from "../src/models/Profile";
 
 describe("test profile routes", () => {
   beforeEach(() => {
-    jest.mock("../../models/Profile.ts");
+    jest.mock("../src/models/Profile.ts");
   });
   const name = "Sample Ekwe";
   const email = "test@admin.test";

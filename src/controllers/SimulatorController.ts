@@ -6,15 +6,14 @@ import { DEFAULT_PAYLOAD_LIMIT } from "../config";
 class SimulatorController {
   public async getSimulators (req: Request, res: Response) {
     const simulators = await Simulator.find().limit(DEFAULT_PAYLOAD_LIMIT).lean();
-    Log.info(simulators);
+    Log.info({ simulators, description: "getSimulators response" });
     res.json({ simulators });
   }
 
   public async getSimulatorsByProfileId (req: Request, res: Response) {
-    Log.info("========== ");
     let query = {};
     const { profileId } = req.params;
-    Log.info({ profileId });
+    Log.info({ profileId, description: "getSimulatorsByProfileId Params" });
     query = { profileId };
     const data = await Simulator.find(query).lean();
     res.json(data);
@@ -38,7 +37,7 @@ class SimulatorController {
       quantity,
       profileId
     };
-    Log.info(newData);
+    Log.info({ newData, description: "saveProfileIdSimulator Params" });
     const simulator = await Simulator.create(newData);
     res.json(simulator);
   }

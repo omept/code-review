@@ -36,7 +36,7 @@ class Api {
       return;
     }
     server.listen(PORT, () =>
-      console.log(`✅  Ready on port ${APP_URL}:${PORT}`)
+      Log.info(`✅  Ready on port ${APP_URL}:${PORT}`)
     );
   }
 }

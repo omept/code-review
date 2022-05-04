@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
 import request from "supertest";
-import { server } from "../../api";
-import { Favorite } from "../../models/Favorite";
+import { server } from "../src/api";
+import { Favorite } from "../src/models/Favorite";
 
 describe("test favorite routes", () => {
   beforeEach(() => {
-    jest.mock("../../models/Favorite.ts");
+    jest.mock("../src/models/Favorite.ts");
   });
   const profileId = "6583948348755834j34384934m345";
 
