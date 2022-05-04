@@ -4,13 +4,10 @@
 
 # Story
 
-```Adding some comments to model files will help its readability. Severity of this is very low so I ignored making this change.```
+```Hi, the thought process I used for the assignment is best seen in the commit message grouping below.   You can use git  to also see the files associated with a commit. The git repo is hosted at https://github.com/ong-gtp/code-review.```
 
 <br />
 
-# Coding
-
-```I used git to track my progress and my git commit logs are listed below. You can view the repo online at https://github.com/ong-gtp/code-review ```
 
  ### c3e9fbd5  (git commit ID)
 -----------------------------------------
@@ -76,3 +73,13 @@
 -- add route validation
 
 -- move Log file location
+
+<br />
+
+### cf179966
+-----
+-- add log description
+
+-- move test files
+
+-- update readme
