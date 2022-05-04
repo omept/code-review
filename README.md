@@ -6,6 +6,17 @@
 
 ```Hi, the thought process I used for the assignment is best seen in the commit message grouping below.   You can use git  to also see the files associated with a commit. The git repo is hosted at https://github.com/ong-gtp/code-review.```
 
+```
+Run the following code to start the app
+1) npm intall
+2) npm run dev
+```
+
+```
+Run the following code to test the app
+1) npm run test
+```
+
 <br />
 
 
