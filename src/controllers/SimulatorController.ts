@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Simulator } from "../models/Simulator";
-import Log from "../resources/Log";
+import Log from "../resources/log/Log";
 import { DEFAULT_PAYLOAD_LIMIT } from "../config";
 
 class SimulatorController {

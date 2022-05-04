@@ -4,7 +4,11 @@ import { server } from "../../api";
 import { Simulator } from "../../models/Simulator";
 
 describe("test simulator routes", () => {
-  const profileId = "2334h4gg34g23jj4jk34";
+  // beforeEach(() => {
+  //   jest.mock("../../models/Simulator.ts");
+  // });
+  const profileId = "62728110a940ff133370b033";
+  const profileId2 = "41224d776a326fb40f000001";
   const simulators = {
     simulators: [
       {
@@ -16,7 +20,7 @@ describe("test simulator routes", () => {
         quantity: 3
       },
       {
-        profileId: "2334h4gg34g23jj4jk34",
+        profileId: "1232334h4gg34g23jj4jk34",
         dateRecorded: "6/10/2021",
         cryptocurrency: "maybe",
         euros: 5000,
@@ -59,15 +63,15 @@ describe("test simulator routes", () => {
       .mockImplementation(() => mockGetSimulator());
 
     const res = await request(server).get(`/api/simulator/${profileId}`);
-
+    expect(res.status).toBe(200);
     expect(mockGetSimulator).toHaveBeenCalledTimes(1);
     expect(mockGetSimulator().lean).toHaveBeenCalledTimes(1);
     expect(res.body).toEqual(filteredSimByProfileId);
   });
 
-  test(`(post) /api/simulator/${profileId} creates a simulation that belongs to ${profileId}`, async () => {
+  test(`(post) /api/simulator/${profileId2} creates a simulation that belongs to ${profileId2}`, async () => {
     const mockSimulatorCreateData = {
-      profileId: "58006865hnb76b5m6bbm",
+      profileId: profileId2,
       dateRecorded: "9/04/2020",
       cryptocurrency: "dodge",
       euros: 5000,
@@ -81,8 +85,8 @@ describe("test simulator routes", () => {
       .spyOn(Simulator, "create")
       .mockImplementation(() => mockGetSimulator());
 
-    const res = await request(server).post(`/api/simulator/${profileId}`);
-
+    const res = await request(server).post(`/api/simulator/${profileId}`).send(mockSimulatorCreateData);
+    expect(res.status).toBe(200);
     expect(mockGetSimulator).toHaveBeenCalledTimes(1);
     expect(res.body).toEqual(mockSimulatorCreateData);
   });

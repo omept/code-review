@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { DEFAULT_PAYLOAD_LIMIT } from "../config";
 import { Favorite } from "../models/Favorite";
-import Log from "../resources/Log";
+import Log from "../resources/log/Log";
 
 class FavoriteController {
   public async getFavorites (req: Request, res: Response) {

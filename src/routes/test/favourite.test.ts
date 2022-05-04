@@ -4,6 +4,9 @@ import { server } from "../../api";
 import { Favorite } from "../../models/Favorite";
 
 describe("test favorite routes", () => {
+  beforeEach(() => {
+    jest.mock("../../models/Favorite.ts");
+  });
   const profileId = "6583948348755834j34384934m345";
 
   const favourite = {

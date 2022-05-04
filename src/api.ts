@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import { router as favoriteRouter } from "./routes/favorite.router";
 import { router as profileRouter } from "./routes/profile.router";
 import { router as simulatorRouter } from "./routes/simulator.router";
-import Log from "./resources/Log";
+import Log from "./resources/log/Log";
 
 class Api {
   initDatabase () {

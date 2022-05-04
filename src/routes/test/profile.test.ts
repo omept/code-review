@@ -4,6 +4,9 @@ import { server } from "../../api";
 import { Profile } from "../../models/Profile";
 
 describe("test profile routes", () => {
+  beforeEach(() => {
+    jest.mock("../../models/Profile.ts");
+  });
   const name = "Sample Ekwe";
   const email = "test@admin.test";
   const nickname = "a nickname";
