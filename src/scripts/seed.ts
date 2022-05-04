@@ -16,7 +16,7 @@ import { DBURL } from "../config";
     email: `String`,
     capital: `123`,
     divisa: `String`,
-    prefered_cryptocurrency: `String`
+    preferedCryptocurrency: `String`
   });
   const seedProfile = await profile.save();
 
@@ -26,19 +26,19 @@ import { DBURL } from "../config";
   });
 
   const simulator = new Simulator({
-    profile_id: idProfile,
+    profileId: idProfile,
     name: `String`,
-    start_date: `01/05/2021`,
-    check_date: `01/05/2021`,
+    startDate: `01/05/2021`,
+    checkDate: `01/05/2021`,
     cryptocurrency: `String`,
     divisa: `String`,
-    Crypto_price_start: `123`,
-    Crypto_price_check: `123`
+    cryptoPriceStart: `123`,
+    cryptoPriceCheck: `123`
   });
   await simulator.save();
 
   const favorite = new Favorite({
-    profile_id: idProfile,
+    profileId: idProfile,
     name: `String`,
     favorite1: `String`,
     favorite2: `String`,

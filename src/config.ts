@@ -14,6 +14,6 @@ const checkEnv = (envVar: string, defaultValue?: string) => {
 };
 export const PORT: number = parseInt(checkEnv("PORT"), 10);
 export const DBURL: string = checkEnv("DBURL");
-export const DEFAULT_PAYLOAD_LIMIT: string = checkEnv("DEFAULT_PAYLOAD_LIMIT");
+export const DEFAULT_PAYLOAD_LIMIT: number = parseInt(checkEnv("DEFAULT_PAYLOAD_LIMIT"));
 export const APP_URL: string = checkEnv("APP_URL");
 export const CORS_ORIGINS = [`${APP_URL}:${PORT}`];

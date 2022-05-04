@@ -27,9 +27,12 @@
     "dev": "ts-node-dev src/api.ts",
     "seed": "ts-node-dev src/scripts/seed.ts",
     "start": "node dist/api.js",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "eslint": "^8.14.0",
@@ -37,6 +40,9 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.23.2"
+    "eslint-plugin-react": "^7.23.2",
+    "jest": "^28.0.3",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.0"
   }
 }

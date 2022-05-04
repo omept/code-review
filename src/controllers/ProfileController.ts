@@ -1,20 +1,21 @@
+import { Request, Response } from "express";
 import { Profile } from "../models/Profile";
 import Log from "../resources/Log";
 import { DEFAULT_PAYLOAD_LIMIT } from "../config";
 
 class ProfileController {
-  public static async getProfiles (req, res) {
+  public async getProfiles (req: Request, res: Response) {
     const profile = await Profile.find().limit(DEFAULT_PAYLOAD_LIMIT).lean();
     Log.info(profile);
     res.json({ profile });
   }
 
-  public static async queryProfiles (req, res) {
+  public async queryProfiles (req: Request, res: Response) {
     const { email, name, nickname } = req.body;
 
     let profile = await Profile.findOne({
       $or: [{ email }, { nickname }]
-    }).exec().lean();
+    }).exec();
 
     if (!profile) {
       profile = await Profile.create({ name, email, nickname });
@@ -24,4 +25,4 @@ class ProfileController {
   }
 }
 
-export default ProfileController;
+export default new ProfileController();

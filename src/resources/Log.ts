@@ -54,7 +54,9 @@ class Log {
   private addLog (_kind: string, _loggable: Object): void {
     const _that = this;
     _kind = _kind.toUpperCase();
-
+    if (process.env.NODE_ENV === "test") {
+      return;
+    }
     fs.open(
       `${_that.baseDir}${_that.fileName}`,
       "a",
